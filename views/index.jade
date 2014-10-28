@@ -1,24 +1,27 @@
 extends layout
 
 block content
-  div.container
-    div.col-md-12
-        div.col-md-6
-            table.table.table-striped.table-hover.table-bordered
-                tr
-                    th Data
-                    th Data
-                tr
-                    td 1
-                    td 2
-                tr
-                    td 1
-                    td 2
-                tr
-                    td 1
-                    td 2
-            button.btn.btn-success
-                span ok
-                span.glyphicon.glyphicon-arrow-down
-            button.btn.btn-danger ok
-            button.btn.btn-default ok
+
+    div.container
+        div.col-lg-12
+            div
+                table.table.table-hover.table-bordered.table-striped.table-condensed
+                    caption.text-left
+                        h1.text-muted Orders
+                    tr
+                        th ID
+                        th Date
+                        th Name
+                        th Address
+                    #orders
+                        for order in orders
+                            tr
+                                td= order._id
+                                td= order.orderDate
+                                td= order.shipName
+                                td= order.shipAddress
+                button.btn.btn-success
+                    span ok
+                    span.glyphicon.glyphicon-arrow-down
+                button.btn.btn-danger ok
+                button.btn.btn-default ok
