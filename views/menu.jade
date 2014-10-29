@@ -1,4 +1,7 @@
 header.container
     div.home.col-md-12
         ul.nav.nav-tabs
-            li.nav.active: a.text-muted Home
+            li.nav(class=title=='Orders'?'active':undefined)
+                a.text-muted(href="/") Home
+            li.nav(class=title=='Categories'?'active':undefined)
+                a.text-muted(href="/categories") Categories

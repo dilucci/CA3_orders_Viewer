@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     model.OrderModel.find(function (error, orders) {
         console.log(orders);
 
-        res.render('index', {orders: orders});
+        res.render('index', {title: "Orders", orders: orders});
         console.log('vi er her nu!');
         mongo.close();
     });
