@@ -8,21 +8,20 @@ block content
                 #orders
                 table.table.table-hover.table-bordered.table-striped.table-condensed
                     caption.text-left
-                        h1.text-muted= title
-                    thead
-                        tr
-                            th ID
-                            th Date
-                            th Name
-                            th Address
+                        h1.ordersTitle.text-muted= title
+                    tr
+                        th ID
+                        th Date
+                        th Name
+                        th Address
 
-                            for order in orders
-                                tr
-                                    td
-                                        a(href="http://localhost:3000/orderdetails/"+order._id) #{order._id}
-                                    td= order.orderDate
-                                    td= order.shipName
-                                    td= order.shipAddress
+                        for order in orders
+                            tr
+                                td
+                                    a(href="/orderdetails/"+order._id) #{order._id}
+                                td= order.orderDate
+                                td= order.shipName
+                                td= order.shipAddress
                 button.btn.btn-success
                     span ok
                     span.glyphicon.glyphicon-arrow-down

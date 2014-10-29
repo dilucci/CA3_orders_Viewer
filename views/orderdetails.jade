@@ -2,5 +2,9 @@ extends layout
 block content
    div.container
       h1= title
+      #order
       p Welcome to #{title}
-      p.id "Id is : " #{id}
+      p This is your order:
+      p #{order}
+      button.btn.btn-primary Go Back
+         a(href="/").white

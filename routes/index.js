@@ -15,7 +15,6 @@ router.get('/', function (req, res) {
         orders.reverse();
 
         res.render('index', {title: "Orders", orders: orders});
-        console.log('vi er her nu!');
         mongo.close();
     });
 });
