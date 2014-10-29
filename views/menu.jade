@@ -1,9 +1,7 @@
 header.container
-    div.home.col-md-12
-        ul.nav.nav-tabs
-            li.list.nav(class=title=='Orders'?'active':undefined)
+    div.home.col-lg-12
+        ul.nav.nav-tabs.nav-justified
+            li(class=title=='Orders'?'active':undefined)
                 a.text-muted(href="/") Home
-            li.list.nav(class=title=='Categories'?'active':undefined)
-                a.text-muted(href="/categories") Categories
-            li.list.nav(class=title=='Orderdetails'?'active':undefined)
+            li(class=title=='Orderdetails'?'active':undefined)
                 a.text-muted(href="/orderdetails") Orderdetails

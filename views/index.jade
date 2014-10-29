@@ -3,12 +3,11 @@ extends layout
 block content
 
     div.container
-        div.col-lg-12
+        div.col-lg-12.panel.panel-default
+            h1.page-header.text-muted= title
             div
                 #orders
-                table.table.table-hover.table-bordered.table-striped.table-condensed
-                    caption.text-left
-                        h1.ordersTitle.text-muted= title
+                table.table.table-hover.table-striped.table-condensed
                     tr
                         th ID
                         th Date

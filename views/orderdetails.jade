@@ -1,9 +1,9 @@
 extends layout
 block content
    div.container
-      h1= title
       #order
-      div.col-lg-12
+      div.col-lg-12.panel.panel-default
+         h1.page-header.text-muted= title
          div.col-sm-6
             p ID:       #{order._id}
             p Date:     #{order.orderDate}
@@ -15,29 +15,30 @@ block content
             p City:     #{order.shipCity}
             p Zip:      #{order.shipPostalCode}
             p Country:  #{order.shipCountry}
-      table.table
-         tr
-            th Product
-            th Unit price
-            th Quantity
-            th Discount
-            th Price
-         #orderDetail
-         #products
-         #price
-         if(products != undefined)
-            for product in products
+         div.panel-default
+            table.table.table-hover.table-striped.table-condensed
+               tr.tableHeader
+                  th Product
+                  th Unit price
+                  th Quantity
+                  th Discount
+                  th Price
+               #orderDetails
+               #price
+               - var sum= 0;
+               for orderDetail in orderDetails
+                  - var price= orderDetail.unitPrice * orderDetail.quantity
+                  tr
+                     td= orderDetail.product.name
+                     td= orderDetail.unitPrice
+                     td= orderDetail.quantity
+                     td= orderDetail.discount
+                     td= price
+                  - sum= sum + price
                tr
-                  td= product.name
-                  td= orderDetail.unitPrice
-                  td= orderDetail.quantity
-                  td= orderDetail.discount
-                  td= price
-         //else
-         //   tr
-         //      td -
-         //      td -
-         //      td -
-         //      td -
-         //      td -
+                  th TOTAL
+                  th
+                  th
+                  th
+                  th= sum
       a.btn.btn-primary(href="/").white Go Back

@@ -6,9 +6,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-
     mongo.connect();
-
     model.OrderModel.find(function (error, orders) {
         orders.sort();
         orders.reverse();

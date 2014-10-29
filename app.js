@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var orderdetails = require('./routes/orderdetails');
-var categories = require('./routes/categories');
 
 var app = express();
 
@@ -25,7 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/orderdetails', orderdetails);
-app.use('/categories', categories); // binder når det er at den rammer /categories, skal du bruge den route der står i filen "categories".
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
