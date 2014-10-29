@@ -24,10 +24,11 @@ exports.ProductModel = mongoose.model('products', ProductSchema);
 
 var DetailsSchema = mongoose.Schema({
     orderId: Number,
-    productId: Number,
+    productId: { type: Number, ref: 'products' },
     unitPrice: Number,
     quantity: Number,
     discount: Number
+
 });
 
 exports.DetailsModel = mongoose.model('orderdetails', DetailsSchema);
