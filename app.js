@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var orderdetails = require('./routes/orderdetails');
 var categories = require('./routes/categories');
 
 var app = express();
@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/orderdetails', orderdetails);
 app.use('/categories', categories); // binder når det er at den rammer /categories, skal du bruge den route der står i filen "categories".
 
 // catch 404 and forward to error handler

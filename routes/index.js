@@ -10,27 +10,14 @@ router.get('/', function (req, res) {
     mongo.connect();
 
     model.OrderModel.find(function (error, orders) {
-        console.log(orders);
+        //console.log(orders);
+        orders.sort();
+        orders.reverse();
 
         res.render('index', {title: "Orders", orders: orders});
         console.log('vi er her nu!');
         mongo.close();
     });
-
-    //model.OrderModel.find(function (error, orders) {
-    //    console.log(orders);
-    //
-    //    orders.forEach(function (order) {
-    //        res.render('index', {
-    //            id: order._id,
-    //            orderDate: order.orderDate,
-    //            shipName: order.shipName,
-    //            shipAddress: order.shipAddress
-    //        });
-    //    });
-    //    console.log('vi er her nu!');
-    //    //mongo.close();
-    //});
 });
 
 module.exports = router;
