@@ -10,7 +10,6 @@ router.get('/', function (req, res) {
     mongo.connect();
 
     model.OrderModel.find(function (error, orders) {
-        //console.log(orders);
         orders.sort();
         orders.reverse();
 

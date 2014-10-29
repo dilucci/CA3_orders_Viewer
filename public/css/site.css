@@ -1,5 +1,7 @@
 .nav-tabs > li.active > a{
     background-color: #eee;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .table{
