@@ -1,0 +1,21 @@
+extends layout
+block content
+    div.container
+        div.col-lg-12.panel.panel-default
+            h1.page-header.text-muted= title
+            div
+                #categories
+                table.table.table-hover.table-striped.table-condensed
+                    tr
+                        th ID
+                        th Name
+                        th description
+                    for category in categories
+                        tr
+
+                            td= category._id
+                            td
+                                a(href="/products/" + category._id + "/" + category.name) #{category.name}
+                            td= category.description
+        include backButton
+        input.btn.btn-primary#backButton(type= "button", value= "Back")

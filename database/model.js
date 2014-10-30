@@ -30,7 +30,7 @@ var DetailsSchema = mongoose.Schema({
     discount: Number
 });
 
-exports.DetailsModel = mongoose.model('orderdetails', DetailsSchema);
+exports.DetailsModel = mongoose.model('orderDetails', DetailsSchema);
 
 
 var CustomerSchema = mongoose.Schema({

@@ -1,0 +1,24 @@
+extends layout
+block content
+   div.container
+      div.col-lg-12.panel.panel-default
+         h1.page-header.text-muted= title
+         div
+            #customers
+            table.table.table-hover.table-striped.table-condensed
+               tr
+                  th ID
+                  th Name
+                  th Contact name
+                  th Phone
+                  th Fax
+               for customer in customers
+                  tr
+                     td= customer._id
+                     td
+                        a(href="/customers/" + customer._id) #{customer.companyName}
+                     td= customer.contactName
+                     td= customer.phone
+                     td= customer.fax
+      include backButton
+      input.btn.btn-primary#backButton(type= "button", value= "Back")

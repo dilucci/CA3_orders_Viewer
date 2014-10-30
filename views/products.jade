@@ -1,0 +1,26 @@
+extends layout
+block content
+    div.container
+        div.col-lg-12.panel.panel-default
+            h1.page-header.text-muted= title
+            div
+                #products
+                table.table.table-hover.table-striped.table-condensed
+                    tr
+                        th ID
+                        th Name
+                        th Category
+                        th Quantity / unit
+                        th Unit price
+                        th In stock
+                    for product in products
+                        tr
+                            td= product._id
+                            td
+                                a(href="/index/" + product._id + "/" + product.name) #{product.name}
+                            td= product.category
+                            td= product.quantityPerUnit
+                            td= product.unitPrice
+                            td= product.unitsInStock
+        include backButton
+        input.btn.btn-primary#backButton(type= "button", value= "Back")

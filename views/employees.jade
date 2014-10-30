@@ -1,0 +1,22 @@
+extends layout
+block content
+   div.container
+      div.col-lg-12.panel.panel-default
+         h1.page-header.text-muted= title
+         div
+            #employees
+            table.table.table-hover.table-striped.table-condensed
+               tr
+                  th ID
+                  th Name
+                  th Title
+                  th Hire date
+               for employee in employees
+                  tr
+                     td= employee._id
+                     td
+                        a(href="/employees/" + employee._id) #{employee.firstName + " " + employee.lastName}
+                     td= employee.title
+                     td= employee.hireDate
+      include backButton
+      input.btn.btn-primary#backButton(type= "button", value= "Back")
