@@ -1,0 +1,23 @@
+extends layout
+block content
+   div.container
+      #order
+      div.col-lg-12.panel.panel-default
+         h1.page-header.text-muted= title
+         div.col-sm-6
+            p ID:                #{order.employee._id}
+            p First name:        #{order.employee.firstName}
+            p Title:             #{order.employee.title}
+            p Birthdate:         #{order.employee.birthDate}
+            p Address:           #{order.employee.address}
+            p region:            #{order.employee.region}
+            p country:           #{order.employee.country}
+            p extension:         #{order.employee.extension}
+         div.col-sm-6
+            p Last Name:         #{order.employee.lastName}
+            p Title of courtesy: #{order.employee.titleOfCourtesy}
+            p Hiredate:          #{order.employee.hireDate}
+            p City:              #{order.employee.city}
+            p Postalcode:        #{order.employee.postalCode}
+            p Home phone:        #{order.employee.homePhone}
+            p Notes:             #{order.employee.notes}

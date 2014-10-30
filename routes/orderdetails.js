@@ -12,16 +12,16 @@ router.get('/:id', function (req, res) {
     mongo.connect();
     var orderId = req.params.id;
 
-    model.OrderModel.find({_id: orderId}, function (err, order) {
-        model.DetailsModel.find({order: orderId}).populate('product').exec(function (err, orderDetails) {
-            res.render('orderdetails', {
-                title: "Orderdetails",
-                order: order[0],
-                orderDetails: orderDetails
+    model.OrderModel.find({_id: orderId}).populate('customer').populate('employee').exec(function (err, orderResult) {
+            model.DetailsModel.find({order: orderId}).populate('product').exec(function (err, orderDetails) {
+                res.render('orderdetails', {
+                    title: "Orderdetails",
+                    order: orderResult[0],
+                    orderDetails: orderDetails
+                });
+                mongo.close();
             });
-            mongo.close();
         });
     });
-});
 
 module.exports = router;

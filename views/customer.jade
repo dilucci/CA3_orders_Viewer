@@ -1,0 +1,19 @@
+extends layout
+block content
+   div.container
+      #order
+      div.col-lg-12.panel.panel-default
+         h1.page-header.text-muted= title
+         div.col-sm-6
+            p ID:             #{order.customer._id}
+            p Company name:   #{order.customer.companyName}
+            p Contact name:   #{order.customer.contactName}
+            p Contact title:  #{order.customer.contactTitle}
+            p City:           #{order.customer.city}
+         div.col-sm-6
+            p Address:        #{order.customer.address}
+            p Region:         #{order.customer.region}
+            p Postal code:    #{order.customer.postalCode}
+            p Country:        #{order.customer.country}
+            p Phone:          #{order.customer.phone}
+            p Fax:            #{order.customer.fax}
