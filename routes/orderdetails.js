@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res) {
-    res.render('empty', {title: "Orderdetails"});
+    res.render('empty', {title: "Order details"});
 });
 
 router.get('/:id', function (req, res) {
@@ -15,7 +15,7 @@ router.get('/:id', function (req, res) {
     model.OrderModel.find({_id: orderId}).populate('customer').populate('employee').exec(function (err, orderResult) {
             model.DetailsModel.find({order: orderId}).populate('product').exec(function (err, orderDetails) {
                 res.render('orderdetails', {
-                    title: "Orderdetails",
+                    title: "Order details",
                     order: orderResult[0],
                     orderDetails: orderDetails
                 });

@@ -1,7 +1,11 @@
 header.container
     div.home.col-lg-12
-        ul.nav.nav-tabs.nav-justified
+        ul.nav.nav-tabs.nav-justified.navbar-collapse
             li(class=title=='Orders'?'active':undefined)
                 a.text-muted(href="/") Home
-            li(class=title=='Orderdetails'?'active':undefined)
-                a.text-muted(href="/orderdetails") Orderdetails
+            li(class=title=='Order details'?'active':undefined)
+                a.text-muted(href="/orderdetails") Order details
+            li(class=title=='Customer details'?'active':undefined)
+                a.text-muted(href="/customer") Customer details
+            li(class=title=='Employee details'?'active':undefined)
+                a.text-muted(href="/employee") Employee details

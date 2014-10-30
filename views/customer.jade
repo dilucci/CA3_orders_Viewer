@@ -1,19 +1,21 @@
 extends layout
 block content
    div.container
-      #order
-      div.col-lg-12.panel.panel-default
+      #customer
+      div.col-xs-12.panel.panel-default
          h1.page-header.text-muted= title
-         div.col-sm-6
-            p ID:             #{order.customer._id}
-            p Company name:   #{order.customer.companyName}
-            p Contact name:   #{order.customer.contactName}
-            p Contact title:  #{order.customer.contactTitle}
-            p City:           #{order.customer.city}
-         div.col-sm-6
-            p Address:        #{order.customer.address}
-            p Region:         #{order.customer.region}
-            p Postal code:    #{order.customer.postalCode}
-            p Country:        #{order.customer.country}
-            p Phone:          #{order.customer.phone}
-            p Fax:            #{order.customer.fax}
+         div.col-xs-6
+            p ID:             #{customer._id}
+            p Company name:   #{customer.companyName}
+            p Contact name:   #{customer.contactName}
+            p Contact title:  #{customer.contactTitle}
+            p City:           #{customer.city}
+         div.col-xs-6
+            p Address:        #{customer.address}
+            p Region:         #{customer.region}
+            p Postal code:    #{customer.postalCode}
+            p Country:        #{customer.country}
+            p Phone:          #{customer.phone}
+            p Fax:            #{customer.fax}
+      include backButton
+      input.btn.btn-primary#backButton(type= "button", value= "Back")
