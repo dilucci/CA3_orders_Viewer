@@ -25,5 +25,19 @@ router.get('/:id', function (req, res) {
     });
 });
 
+router.get('/:customerId/:companyName', function (req, res) {
+    mongo.connect();
+        var customerId = req.params.customerId;
+        var companyName = req.params.companyName;
+
+        model.OrderModel.find({customer: customerId}, function (err, orders) {
+            res.render('orders', {
+                title: "Orders for customer " + companyName,
+                orders: orders
+            });
+        mongo.close();
+    });
+});
+
 module.exports = router;
 

@@ -26,4 +26,18 @@ router.get('/:id', function (req, res) {
     });
 });
 
+router.get('/:employeeId/:employeeName', function (req, res) {
+    mongo.connect();
+    var employeeId = req.params.employeeId;
+    var employeeName = req.params.employeeName;
+
+    model.OrderModel.find({employee: employeeId}, function (err, orders) {
+        res.render('orders', {
+            title: "Orders for employee " + employeeName,
+            orders: orders
+        });
+        mongo.close();
+    });
+});
+
 module.exports = router;

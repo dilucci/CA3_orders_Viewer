@@ -15,7 +15,7 @@ block content
                   tr
                      td= employee._id
                      td
-                        a(href="/employees/" + employee._id) #{employee.firstName + " " + employee.lastName}
+                        a(href="/employees/" + employee._id + "/" + employee.firstName + " " + employee.lastName) #{employee.firstName + " " + employee.lastName}
                      td= employee.title
                      td= employee.hireDate
       include backButton

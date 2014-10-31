@@ -16,7 +16,7 @@ block content
                   tr
                      td= customer._id
                      td
-                        a(href="/customers/" + customer._id) #{customer.companyName}
+                        a(href="/customers/" + customer._id + "/" + customer.companyName) #{customer.companyName}
                      td= customer.contactName
                      td= customer.phone
                      td= customer.fax

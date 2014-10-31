@@ -17,4 +17,16 @@ router.get('/', function (req, res) {
     });
 });
 
+router.get('/:categoryId/:categoryName', function (req, res) {
+    mongo.connect();
+    var categoryId = req.params.categoryId;
+    var categoryName = req.params.categoryName;
+    model.ProductModel.find( {category: categoryId}, function (error, products) {
+        products.sort();
+
+        res.render('products', {title: "Products of type " + categoryName, products: products});
+        mongo.close();
+    });
+});
+
 module.exports = router;

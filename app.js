@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var orderDetails = require('./routes/orderdetails');
+var order = require('./routes/order');
 var customer = require('./routes/customer');
 var employee = require('./routes/employee');
 var categories = require('./routes/categories');
@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/orderDetails', orderDetails);
+app.use('/orders', order);
 app.use('/customers', customer);
 app.use('/employees', employee);
 app.use('/categories', categories);
