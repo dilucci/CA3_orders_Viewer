@@ -3,7 +3,7 @@ var async = require('async');
 var mongoose = require('mongoose');
 var model = require('./model');
 
-var dbUrl = "mongodb://localhost/northwind";
+var dbUrl = "mongodb://gruppe4:deterenMOCK!@ds056727.mongolab.com:56727/ca3_ordersviewer";
 
 
 function readData(path) {
