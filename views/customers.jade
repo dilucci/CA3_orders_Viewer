@@ -20,5 +20,8 @@ block content
                      td= customer.contactName
                      td= customer.phone
                      td= customer.fax
+                        form(action="/customers/" + customer._id)
+                           input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
+                           input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
       include backButton
       input.btn.btn-primary#backButton(type= "button", value= "Back")

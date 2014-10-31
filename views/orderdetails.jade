@@ -5,8 +5,9 @@ block content
       div.col-xs-12.panel.panel-default
          h1.page-header.text-muted= title
          div.col-xs-6
-            p= 'Costumer: '
-               a(href='/customers/' + order.customer._id ) #{order.customer.contactName}
+            p= 'Customer: '
+               a(href='/customers/' + order.customer._id + "/" + order.shipName) #{order.shipName}
+            p Contact:  #{order.customer.contactName}
             p ID:       #{order._id}
             p Date:     #{order.orderDate}
             p Required: #{order.requiredDate}
@@ -38,6 +39,9 @@ block content
                      td= orderDetail.quantity
                      td= orderDetail.discount
                      td= price
+                        form
+                           input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
+                           input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
                   - sum= sum + price
                tr
                   th TOTAL

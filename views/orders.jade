@@ -16,10 +16,14 @@ block content
                         for order in orders
                             tr
                                 td
-                                    a(href="/orders/"+order._id) #{order._id}
+                                    a(href="/orders/" + order._id) #{order._id}
                                 td= order.orderDate
                                 td= order.shipName
                                 td= order.shipAddress
+                                    form(action= "/orders/" + order._id)
+                                        input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
+                                        input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
+
                 //button.btn.btn-success
                 //    span ok
                 //    span.glyphicon.glyphicon-arrow-down

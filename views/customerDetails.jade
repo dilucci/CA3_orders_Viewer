@@ -1,21 +1,58 @@
+//extends layout
+//block content
+//   div.container
+//      #customer
+//      div.col-xs-12.panel.panel-default
+//         h1.page-header.text-muted= title
+//         div.col-xs-6
+//            p ID:             #{customer._id}
+//            p Company name:   #{customer.companyName}
+//            p Contact name:   #{customer.contactName}
+//            p Contact title:  #{customer.contactTitle}
+//            p City:           #{customer.city}
+//         div.col-xs-6
+//            p Address:        #{customer.address}
+//            p Region:         #{customer.region}
+//            p Postal code:    #{customer.postalCode}
+//            p Country:        #{customer.country}
+//            p Phone:          #{customer.phone}
+//            p Fax:            #{customer.fax}
+//      include backButton
+//      input.btn.btn-primary#backButton(type= "button", value= "Back")
+
+
 extends layout
 block content
    div.container
       #customer
-      div.col-xs-12.panel.panel-default
-         h1.page-header.text-muted= title
-         div.col-xs-6
-            p ID:             #{customer._id}
-            p Company name:   #{customer.companyName}
-            p Contact name:   #{customer.contactName}
-            p Contact title:  #{customer.contactTitle}
-            p City:           #{customer.city}
-         div.col-xs-6
-            p Address:        #{customer.address}
-            p Region:         #{customer.region}
-            p Postal code:    #{customer.postalCode}
-            p Country:        #{customer.country}
-            p Phone:          #{customer.phone}
-            p Fax:            #{customer.fax}
+      form(method= "post")
+         div.col-xs-12.panel.panel-default
+            h1.page-header.text-muted= title
+            div
+               div.col-xs-6
+                  p= "ID: "
+                     input#customerId(name="customerId" type= "text" value= customer._id disabled)
+                  p= "Company name: "
+                     input#customerCompanyName(name="customerCompanyName" type= "text" value= customer.companyName)
+                  p= "Contact name: "
+                     input#customerContactName(type= "text" value= customer.contactName)
+                  p= "Contact title: "
+                     input#customerContactTitle(type= "text" value= customer.contactTitle)
+                  p= "City: "
+                     input#customerCity(type= "text" value= customer.city)
+               div.col-xs-6
+                  p= "Address: "
+                     input#customerAddress(type= "text" value= customer.address)
+                  p= "Region: "
+                     input#customerRegion(type= "text" value= customer.region)
+                  p= "Postal code: "
+                     input#customerPostalCode(type= "text" value= customer.postalCode)
+                  p= "Country: "
+                     input#customerCountry(type= "text" value= customer.country)
+                  p= "Phone: "
+                     input#customerPhone(type= "text" value= customer.phone)
+                  p= "Fax: "
+                     input#customerFax(type= "text" value= customer.fax)
+         input.btn.btn-primary#saveButton(type= "submit", value= "Save", style= "float: right")
       include backButton
       input.btn.btn-primary#backButton(type= "button", value= "Back")

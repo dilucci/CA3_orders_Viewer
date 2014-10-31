@@ -22,5 +22,8 @@ block content
                             td= product.quantityPerUnit
                             td= product.unitPrice
                             td= product.unitsInStock
+                                form
+                                    input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
+                                    input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
         include backButton
         input.btn.btn-primary#backButton(type= "button", value= "Back")
