@@ -3,7 +3,7 @@ var async = require('async');
 var mongoose = require('mongoose');
 var model = require('./model');
 
-var dbUrl = "mongodb://gruppe4.azurewebsites.net/northwind";
+var dbUrl = "mongodb://localhost/northwind";
 
 
 function readData(path) {
