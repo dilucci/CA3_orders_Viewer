@@ -24,8 +24,8 @@ block content
                      td
                         form(method="post" action="/customers/delete/" + customer._id)
                            input.btn.btn-danger.btn-sm#deleteButton(type= "submit", value= "Delete" onclick= "return confirm('Really delete customer?');", style= "float: right")
-                           form(method="get" action="/customers/" + customer._id)
-                              input.btn.btn-primary.btn-sm#editButton(type= "submit", value= "Edit", style= "float: right")
+                        form(method="get" action="/customers/" + customer._id)
+                           input.btn.btn-primary.btn-sm#editButton(type= "submit", value= "Edit", style= "float: right")
 
 
       include backButton
