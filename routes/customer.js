@@ -49,38 +49,28 @@ router.get('/:customerId/:companyName', function (req, res) {
 //});
 
 router.post('/:id', function (req, res) {
-    console.log("PUT customer");
     mongo.connect();
-
-
-    console.log(req.params.id)
-    console.log(req.body.customerCompanyName)
-    mongo.close()
-    //model.CustomerModel.update(
-    //    {_id: req.body.customerId}, {
-    //        companyName: req.body.customerCompanyName,
-    //        contactName: $('customerContactName').val(),
-    //        contactTitle: $('customerContactTitle').val(),
-    //        address: $('customerAddress').val(),
-    //        city: $('customerCity').val(),
-    //        region: $('customerRegion').val(),
-    //        postalCode: $('customerPostalCode').val(),
-    //        country: $('customerCountry').val(),
-    //        phone: $('customerPhone').val(),
-    //        fax: $('customerFax').val()
-    //    },
-    //    {
-    //        upsert: false,
-    //        multi: false
-    //    },
-    //
-    //    function (error) {
-    //        mongo.close();
-    //    }
-    //);
-
-
-
+    model.CustomerModel.update(
+        {_id: req.params.id}, {
+            companyName: req.body.customerCompanyName,
+            contactName: req.body.customerContactName,
+            contactTitle: req.body.customerContactTitle,
+            address: req.body.customerAddress,
+            city: req.body.customerCity,
+            region: req.body.customerRegion,
+            postalCode: req.body.customerPostalCode,
+            country: req.body.customerCountry,
+            phone: req.body.customerPhone,
+            fax: req.body.customerFax
+        },
+        {
+            upsert: false,
+            multi: false
+        },
+        function (error) {
+            mongo.close();
+        }
+    );
 
     //model.CustomerModel.update(
     //    {_id: $('customerId').val()}, {
@@ -105,28 +95,19 @@ router.post('/:id', function (req, res) {
     //    }
     //);
 
-
-
-    //var name = companyName;
-    //mongo.connect();
-    //var id = req.params.id;
-    //console.log(id);
-    //model.Custo
-    //merModel.find({_id: id}, function (error, customers) {
-    //    res.render('customerDetails', {title: "Customer details", customer: customers[0]});
-    //    mongo.close();
-    //});
 });
 
+router.post('/delete/:id', function (req, res) {
+    mongo.connect();
 
-//document.read(YES)
-//{
-//    function editButton() {
-//        $( '#customerInput').attr("disabled", false);
-//    }
-//
-//}
-
+    model.CustomerModel.remove(
+        {_id: req.params.id},
+        function (error) {
+            console.log("Deleted " + req.params.id)
+            mongo.close();
+        }
+    );
+});
 
 module.exports = router;
 

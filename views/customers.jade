@@ -20,8 +20,10 @@ block content
                      td= customer.contactName
                      td= customer.phone
                      td= customer.fax
-                        form(action="/customers/" + customer._id)
-                           input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
+                        form(method="get" action="/customers/" + customer._id)
                            input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
+                        form(method="post" action="/customers/delete/" + customer._id)
+                           input.btn.btn-primary#deleteButton(type= "submit", value= "Delete" onclick= "return confirm('Really delete customer?');", style= "float: right")
+
       include backButton
       input.btn.btn-primary#backButton(type= "button", value= "Back")
