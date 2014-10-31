@@ -11,6 +11,7 @@ block content
                   th Name
                   th Title
                   th Hire date
+                  th
                for employee in employees
                   tr
                      td= employee._id
@@ -18,8 +19,9 @@ block content
                         a(href="/employees/" + employee._id + "/" + employee.firstName + " " + employee.lastName) #{employee.firstName + " " + employee.lastName}
                      td= employee.title
                      td= employee.hireDate
+                     td
                         form
-                           input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
-                           input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
+                           input.btn.btn-danger.btn-sm#deleteButton(type= "button", value= "Delete", style= "float: right")
+                           input.btn.btn-primary.btn-sm#editButton(type= "submit", value= "Edit", style= "float: right")
       include backButton
       input.btn.btn-primary#backButton(type= "button", value= "Back")

@@ -12,6 +12,7 @@ block content
                   th Contact name
                   th Phone
                   th Fax
+                  th
                for customer in customers
                   tr
                      td= customer._id
@@ -20,10 +21,12 @@ block content
                      td= customer.contactName
                      td= customer.phone
                      td= customer.fax
-                        form(method="get" action="/customers/" + customer._id)
-                           input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
+                     td
                         form(method="post" action="/customers/delete/" + customer._id)
-                           input.btn.btn-primary#deleteButton(type= "submit", value= "Delete" onclick= "return confirm('Really delete customer?');", style= "float: right")
+                           input.btn.btn-danger.btn-sm#deleteButton(type= "submit", value= "Delete" onclick= "return confirm('Really delete customer?');", style= "float: right")
+                           form(method="get" action="/customers/" + customer._id)
+                              input.btn.btn-primary.btn-sm#editButton(type= "submit", value= "Edit", style= "float: right")
+
 
       include backButton
       input.btn.btn-primary#backButton(type= "button", value= "Back")
