@@ -23,10 +23,5 @@ block content
                                 td
                                     form(action= "/orders/" + order._id)
                                         input.btn.btn-danger.btn-sm#deleteButton(type= "button", value= "Delete", style= "float: right")
-                                        input.btn.btn-primary.btn-sm#editButton(type= "submit", value= "Edit", style= "float: right")
-
-                //button.btn.btn-success
-                //    span ok
-                //    span.glyphicon.glyphicon-arrow-down
-                //button.btn.btn-danger ok
-                //button.btn.btn-default ok
+                                        input.btn.btn-primary.btn-sm#editButton(class="editButton" type= "submit", value= "Edit", style= "float: right")
+        input.btn.btn-primary#backButton(type= "button", value= "Back")

@@ -41,7 +41,7 @@ block content
                      td= price
                         form
                            input.btn.btn-primary#deleteButton(type= "button", value= "Delete", style= "float: right")
-                           input.btn.btn-primary#editButton(type= "submit", value= "Edit", style= "float: right")
+                           input.btn.btn-primary#editButton(class="editButton" type= "submit", value= "Edit", style= "float: right")
                   - sum= sum + price
                tr
                   th TOTAL
@@ -49,5 +49,4 @@ block content
                   th
                   th
                   th= sum
-      include backButton
       input.btn.btn-primary#backButton(type= "button", value= "Back")

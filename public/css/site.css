@@ -1,3 +1,11 @@
 .nav-tabs > li.active > a{
     background-color: #eee;
 }
+
+.buttonForm {
+    float: right;
+}
+
+.editButton {
+    margin-right: 7px;
+}
