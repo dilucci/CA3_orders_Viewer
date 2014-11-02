@@ -24,7 +24,10 @@ block content
                             td= product.unitPrice
                             td= product.unitsInStock
                             td
-                                form
-                                    input.btn.btn-danger.btn-sm#deleteButton(type= "button", value= "Delete", style= "float: right")
-                                    input.btn.btn-primary.btn-sm#editButton(class="editButton" type= "submit", value= "Edit", style= "float: right")
+                                form(class="buttonForm")
+                                    button.btn.btn-danger.btn-sm#deleteButton(type= "submit", title="Delete", onclick= "return confirm('Really delete customer?');", style= "float: right")
+                                        i(class="glyphicon glyphicon-trash")
+                                form(class="buttonForm")
+                                    button.btn.btn-primary.btn-sm.btn-glyph#editButton(class="editButton" type= "submit", title="Edit", value= "Edit", style= "float: right")
+                                        i(class="glyphicon glyphicon-pencil")
         input.btn.btn-primary#backButton(type= "button", value= "Back")
